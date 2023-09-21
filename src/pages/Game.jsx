@@ -11,6 +11,8 @@ import Code from '../components/Code';
 import Result from '../components/Result';
 import Percentage from '../components/Percentage';
 import Button from '../components/Button';
+import { useTranslation } from 'react-i18next';
+
 
 const Intro = styled.div`
   border: 1px solid ${props => props.theme.border};
@@ -43,50 +45,53 @@ const ShareContainer = styled.p`
   text-align: center;
 `;
 
-const Game = ({ intro, current, answers, style, onStart, onRestart }) => (
-  <>
-    {intro && (
-      <Intro>
-        <p>
-          Each question contains a code snippet and four answer choices.
-          <br />
-          Look carefully at the code and choose the one correct answer.
-        </p>
-        <p>After answering all 23 questions you'll be shown your results.</p>
-        <StartButtonContainer>
-          <Button label="Start Game" id="start" onClick={onStart} />
-        </StartButtonContainer>
-      </Intro>
-    )}
+const Game = ({ intro, current, answers, style, onStart, onRestart }) => {
+  const { t } = useTranslation();
+  return (
+    <>
+      {intro && (
+        <Intro>
+          <p>
+            Each question contains a code snippet and four answer choices.
+            <br />
+            Look carefully at the code and choose the one correct answer.
+          </p>
+          <p>After answering all 23 questions you'll be shown your results.</p>
+          <StartButtonContainer>
+            <Button label={t("Start Game")} id="start" onClick={onStart} />
+          </StartButtonContainer>
+        </Intro>
+      )}
 
-    {!intro && current && (
-      <>
-        <ProgressBar />
-        <Code style={style} />
-        <ButtonContainer />
-      </>
-    )}
+      {!intro && current && (
+        <>
+          <ProgressBar />
+          <Code style={style} />
+          <ButtonContainer />
+        </>
+      )}
 
-    {!intro && !current && (
-      <>
-        <Result />
-        <Percentage />
-        <Restart>
-          <Button label="Try Again" id="try_again" onClick={onRestart} />
-        </Restart>
-        <ShareContainer>
-          <GitHubButton
-            href="https://github.com/zoltantothcom/Design-Patterns-JavaScript"
-            aria-label="Star zoltantothcom/Design-Patterns-JavaScript on GitHub"
-            target="_blank"
-          >
-            Star on GitHub
-          </GitHubButton>
-        </ShareContainer>
-      </>
-    )}
-  </>
-);
+      {!intro && !current && (
+        <>
+          <Result />
+          <Percentage />
+          <Restart>
+            <Button label="Try Again" id="try_again" onClick={onRestart} />
+          </Restart>
+          <ShareContainer>
+            <GitHubButton
+              href="https://github.com/zoltantothcom/Design-Patterns-JavaScript"
+              aria-label="Star zoltantothcom/Design-Patterns-JavaScript on GitHub"
+              target="_blank"
+            >
+              Star on GitHub
+            </GitHubButton>
+          </ShareContainer>
+        </>
+      )}
+    </>
+  );
+};
 
 Game.propTypes = {
   style: PropTypes.object.isRequired,

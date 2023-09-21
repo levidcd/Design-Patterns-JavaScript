@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -52,7 +53,13 @@ module.exports = {
       generateStatsFile: true,
       statsOptions: { source: false },
       statsFilename: path.join(__dirname, 'stats/stats.json')
-    })
+    }),
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, 'public'),
+        to: path.resolve(__dirname, 'build')
+      }
+    ])
   ],
   resolve: {
     extensions: ['.js', '.jsx']
