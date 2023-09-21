@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 
 const TitleContainer = styled.div`
   padding: 0.75rem 0 1rem;
@@ -23,11 +24,14 @@ const SubHeading = styled.h2`
   margin: 0.75rem 0 0;
 `;
 
-export const Title = () => (
-  <TitleContainer>
-    <Heading>Design Patterns Game</Heading>
-    <SubHeading>&ldquo;Gang of Four&rdquo; patterns in JavaScript</SubHeading>
-  </TitleContainer>
-);
+export const Title = () => {
+  const { t } = useTranslation();
+  return (
+    <TitleContainer>
+      <Heading>{t('Design Patterns Game')}</Heading>
+      <SubHeading>{t('"Gang of Four" patterns in JavaScript')}</SubHeading>
+    </TitleContainer>
+  );
+};
 
 export default Title;

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 
 const StyledAbout = styled.div`
   color: ${props => props.theme.text};
@@ -20,36 +21,37 @@ const Header = styled.h3`
   margin-top: 2rem;
 `;
 
-const About = () => (
-  <StyledAbout>
-    <Header>The Game</Header>
-    <p>
-      Design Patterns - get familiar with the design patterns implemented in JavaScript, test
-      yourself (or someone else) or simply for fun. Enjoy!
-    </p>
+const About = () => {
+  const { t } = useTranslation();
 
-    <Header>References</Header>
-    <p>
-      All the code samples are taken from this{' '}
-      <cite>
-        <a href="//github.com/fbeline/Design-Patterns-JS" target="_blank">
-          awesome code compilation
-        </a>{' '}
-        by Felipe Beline
-      </cite>
-      .
-    </p>
-    <p>
-      If you want a deep dive into the subject I can't recommend enough{' '}
-      <cite>
-        <a href="//addyosmani.com/resources/essentialjsdesignpatterns/book/" target="_blank">
-          Learning JavaScript Design Patterns
-        </a>{' '}
-        by Addy Osmani
-      </cite>
-      .
-    </p>
-  </StyledAbout>
-);
+  return (
+    <StyledAbout>
+      <Header>{t('The Game')}</Header>
+      <p>
+        {t('Design Patterns')} - {t('Design Patterns Intro')}
+      </p>
+
+      <Header>{t('References')}</Header>
+      <p>
+        {t('Felipe Beline References')}
+        <cite>
+          <a href="//github.com/fbeline/Design-Patterns-JS" target="_blank">
+            awesome code compilation
+          </a>
+        </cite>
+        .
+      </p>
+      <p>
+        {t('Addy Osmani References')}
+        <cite>
+          <a href="//addyosmani.com/resources/essentialjsdesignpatterns/book/" target="_blank">
+            Learning JavaScript Design Patterns
+          </a>
+        </cite>
+        .
+      </p>
+    </StyledAbout>
+  );
+};
 
 export default About;

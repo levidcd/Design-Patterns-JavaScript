@@ -1,3 +1,6 @@
 {
-  "Start Game": "Start Game"
+  "Design Patterns Intro": "get familiar with the design patterns implemented in JavaScript, test yourself (or someone else) or simply for fun. Enjoy!",
+  "Game Intro1": "Each question contains a code snippet and four answer choices.",
+  "Game Intro2": "Look carefully at the code and choose the one correct answer.",
+  "Game Intro3": "After answering all 23 questions you'll be shown your results."
 }

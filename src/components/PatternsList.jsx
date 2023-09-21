@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { patterns } from '../static/patterns';
+import { useTranslation } from 'react-i18next';
 
 const StyledPatterns = styled.div`
   color: ${props => props.theme.text};
@@ -44,9 +45,10 @@ const PatternsList = () => {
     </ul>
   );
 
+  const { t } = useTranslation();
   return (
     <StyledPatterns>
-      <h2>Design Patterns</h2>
+      <h2>{t('Design Patterns')}</h2>
 
       <p>
         In software engineering, a design pattern is a general repeatable solution to a commonly

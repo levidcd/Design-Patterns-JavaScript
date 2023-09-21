@@ -10,6 +10,8 @@ import styleDark from '../styles/hljs/hljs.dark';
 import { patterns } from '../static/patterns';
 import { restart } from '../actions/restart';
 import { getMode } from '../selectors';
+import { withTranslation } from 'react-i18next';
+
 
 SyntaxHighlighter.registerLanguage('javascript', js);
 
@@ -62,9 +64,11 @@ class Pattern extends React.Component {
 
     const style = this.props.mode === 'dark' ? styleDark : styleLight;
 
+    const { t } = this.props;
+
     return (
       <StyledPattern>
-        <StyledLink to="/patterns">&larr; Back to Patterns List</StyledLink>
+        <StyledLink to="/patterns">&larr; {t('Back to Patterns List')}</StyledLink>
         {pattern && (
           <React.Fragment>
             <h2>{pattern.name}</h2>
@@ -105,11 +109,11 @@ Pattern.propTypes = {
   reset: PropTypes.func.isRequired
 };
 
-export default connect(
+export default withTranslation()(connect(
   state => ({
     mode: getMode(state)
   }),
   {
     reset: () => restart()
   }
-)(Pattern);
+)(Pattern));

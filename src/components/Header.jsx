@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components';
 import { Route, withRouter, NavLink as Link } from 'react-router-dom';
 import Toggle from './Toggle';
 import Title from './Title';
+import { useTranslation } from 'react-i18next';
 
 const StyledHeader = styled.header`
   align-items: center;
@@ -56,6 +57,7 @@ const StyledRouterSpan = styled.span`
 `;
 
 const Header = props => {
+  const { t } = useTranslation();
   const {
     location: { pathname }
   } = props;
@@ -63,15 +65,15 @@ const Header = props => {
   const paths = [
     {
       path: '/',
-      page: 'Game'
+      page: t("Game")
     },
     {
       path: '/patterns',
-      page: 'Pattern Reference'
+      page: t("Pattern Reference")
     },
     {
       path: '/about',
-      page: 'About'
+      page: t("About")
     }
   ];
 
@@ -93,7 +95,6 @@ const Header = props => {
         <Route exact path="/" render={() => <Toggle control="js" />} />
         <Toggle control="mode" />
       </StyledSettingsContainer>
-
       <Title />
     </StyledHeader>
   );

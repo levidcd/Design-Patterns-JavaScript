@@ -52,11 +52,11 @@ const Game = ({ intro, current, answers, style, onStart, onRestart }) => {
       {intro && (
         <Intro>
           <p>
-            Each question contains a code snippet and four answer choices.
+            {t('Game Intro1')}
             <br />
-            Look carefully at the code and choose the one correct answer.
+            {t('Game Intro2')}
           </p>
-          <p>After answering all 23 questions you'll be shown your results.</p>
+          <p>  {t('Game Intro3')}</p>
           <StartButtonContainer>
             <Button label={t("Start Game")} id="start" onClick={onStart} />
           </StartButtonContainer>

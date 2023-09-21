@@ -1,3 +1,18 @@
 {
-  "Start Game": "开始游戏"
+  "Start Game": "开始游戏",
+  "Game": "游戏",
+  "Pattern Reference": "参考",
+  "About": "关于",
+  "Back to Patterns List": "返回模式列表",
+  "Design Patterns Game": "设计模式游戏",
+  "\"Gang of Four\" patterns in JavaScript": "JavaScript 中的 GOF 设计模式",
+  "The Game": "游戏介绍",
+  "Design Patterns": "设计模式",
+  "Design Patterns Intro": "熟悉在JavaScript中实现的设计模式，用来测试自己（或其他人）或只是为了好玩🤣",
+  "References": "引用",
+  "Felipe Beline References": "所有的示例代码来自于",
+  "Addy Osmani References": "如果你想深入了解这个主题，推荐 Addy Osmani的",
+  "Game Intro1": "每个问题都包含一个代码片段和四个答案选项。",
+  "Game Intro2": "仔细查看代码并选择一个正确答案。",
+  "Game Intro3": "回答全部23个问题后你会看到你的测试结果"
 }
