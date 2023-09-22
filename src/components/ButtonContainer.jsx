@@ -6,6 +6,7 @@ import Button from './Button';
 import { submitAnswer } from '../actions/submitAnswer';
 import { getCurrent, getPatterns } from '../selectors';
 import { shuffle } from '../helpers/shuffleArray';
+import { useTranslation } from 'react-i18next';
 
 const StyledButtonContainer = styled.div`
   align-content: space-around;
@@ -17,6 +18,9 @@ const StyledButtonContainer = styled.div`
 `;
 
 export const ButtonContainer = props => {
+
+  const { t } = useTranslation();
+
   const { current, patterns, onSubmitAnswer } = props;
 
   // get 3 random patterns in addition to correct one
@@ -28,7 +32,7 @@ export const ButtonContainer = props => {
   return (
     <StyledButtonContainer>
       {variants.map(({ uuid, name }) => (
-        <Button label={name} id={uuid} key={uuid} onClick={() => onSubmitAnswer(uuid)} />
+        <Button label={t(name)} id={uuid} key={uuid} onClick={() => onSubmitAnswer(uuid)} />
       ))}
     </StyledButtonContainer>
   );

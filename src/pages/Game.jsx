@@ -76,7 +76,7 @@ const Game = ({ intro, current, answers, style, onStart, onRestart }) => {
           <Result />
           <Percentage />
           <Restart>
-            <Button label="Try Again" id="try_again" onClick={onRestart} />
+            <Button label={t("Try Again")} id="try_again" onClick={onRestart} />
           </Restart>
           <ShareContainer>
             <GitHubButton
