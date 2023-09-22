@@ -71,18 +71,18 @@ class Pattern extends React.Component {
         <StyledLink to="/patterns">&larr; {t('Back to Patterns List')}</StyledLink>
         {pattern && (
           <React.Fragment>
-            <h2>{pattern.name}</h2>
+            <h2>{t(pattern.name)}</h2>
             <p>
-              <SubHeader>Type:</SubHeader>
-              <Type>{pattern.type} pattern</Type>
+              <SubHeader>{t('Type')}</SubHeader>
+              <Type>{t(pattern.type)}{t('pattern')}</Type>
             </p>
             <p>
-              <SubHeader>Definition:</SubHeader>
+              <SubHeader>{t('Definition')}</SubHeader>
               {pattern.definition}
             </p>
             {pattern.when && (
               <p>
-                <SubHeader>Use when&hellip;</SubHeader>
+                <SubHeader>{t('Use When')}</SubHeader>
                 &hellip;{pattern.when}.
               </p>
             )}

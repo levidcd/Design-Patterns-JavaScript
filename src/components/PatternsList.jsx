@@ -31,13 +31,15 @@ const StyledPatterns = styled.div`
 `;
 
 const PatternsList = () => {
+  const { t } = useTranslation();
+
   const lister = patternType => (
     <ul>
       {patterns.map(({ id, name, type }) => {
         if (type === patternType) {
           return (
             <li key={id}>
-              <Link to={`/patterns/${id}`}>{name}</Link>
+              <Link to={`/patterns/${id}`}>{t(name)}</Link>
             </li>
           );
         }
@@ -45,37 +47,30 @@ const PatternsList = () => {
     </ul>
   );
 
-  const { t } = useTranslation();
+
   return (
     <StyledPatterns>
       <h2>{t('Design Patterns')}</h2>
 
       <p>
-        In software engineering, a design pattern is a general repeatable solution to a commonly
-        occurring problem in software design.
+        {t('Design Patterns Desc')}
       </p>
 
-      <h3>Creational Design Patterns</h3>
+      <h3>{t('creational')}{t('Design Patterns')}</h3>
       <p>
-        These design patterns are all about class instantiation. This pattern can be further divided
-        into class-creation patterns and object-creational patterns. While class-creation patterns
-        use inheritance effectively in the instantiation process, object-creation patterns use
-        delegation effectively to get the job done.
+        {t('creational_desc')}
       </p>
       {lister('creational')}
 
-      <h3>Structural Design Patterns</h3>
+      <h3>{t('structural')}{t('Design Patterns')}</h3>
       <p>
-        These design patterns are all about Class and Object composition. Structural class-creation
-        patterns use inheritance to compose interfaces. Structural object-patterns define ways to
-        compose objects to obtain new functionality.
+        {t('structural_desc')}
       </p>
       {lister('structural')}
 
-      <h3>Behavioral Design Patterns</h3>
+      <h3>{t('behavioral')}{t('Design Patterns')}</h3>
       <p>
-        These design patterns are all about Class's objects communication. Behavioral patterns are
-        those patterns that are most specifically concerned with communication between objects.
+        {t('behavioral_desc')}
       </p>
       {lister('behavioral')}
     </StyledPatterns>

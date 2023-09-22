@@ -1,6 +1,10 @@
 {
+  "Design Patterns Desc": "In software engineering, a design pattern is a general repeatable solution to a commonly occurring problem in software design.",
   "Design Patterns Intro": "get familiar with the design patterns implemented in JavaScript, test yourself (or someone else) or simply for fun. Enjoy!",
   "Game Intro1": "Each question contains a code snippet and four answer choices.",
   "Game Intro2": "Look carefully at the code and choose the one correct answer.",
-  "Game Intro3": "After answering all 23 questions you'll be shown your results."
+  "Game Intro3": "After answering all 23 questions you'll be shown your results.",
+  "creational_desc":"These design patterns are all about class instantiation. This pattern can be further divided into class-creation patterns and object-creational patterns. While class-creation patterns use inheritance effectively in the instantiation process, object-creation patterns use delegation effectively to get the job done.",
+  "structural_desc":"These design patterns are all about Class and Object composition. Structural class-creation patterns use inheritance to compose interfaces. Structural object-patterns define ways to compose objects to obtain new functionality.",
+  "behavioral_desc":"These design patterns are all about Class and Object composition. Structural class-creation patterns use inheritance to compose interfaces. Structural object-patterns define ways to compose objects to obtain new functionality."
 }

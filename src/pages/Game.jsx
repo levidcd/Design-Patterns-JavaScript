@@ -80,8 +80,8 @@ const Game = ({ intro, current, answers, style, onStart, onRestart }) => {
           </Restart>
           <ShareContainer>
             <GitHubButton
-              href="https://github.com/zoltantothcom/Design-Patterns-JavaScript"
-              aria-label="Star zoltantothcom/Design-Patterns-JavaScript on GitHub"
+              href="https://github.com/levidcd/Design-Patterns-JavaScript"
+              aria-label="Star levidcd/Design-Patterns-JavaScript on GitHub"
               target="_blank"
             >
               Star on GitHub
