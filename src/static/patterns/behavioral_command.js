@@ -5,8 +5,11 @@ const COMMAND = {
   hint: 'Encapsulate a command request as an object',
   definition: `Encapsulate a request as an object, thereby letting you parameterize clients with different requests,
     queue or log requests, and support undoable operations.`,
+  definition_zh: `将请求封装为对象，从而允许您参数化具有不同请求的客户端，在队列中记录请求，并支持可撤消的操作。`,
   when:
     'you have a queue of requests to handle or you want to log them. Also when you want to have an «undo» action',
+  when_zh:
+    '您有一个请求队列要处理，或者想要记录它们。再或者，您想要执行“撤消”操作。比如：计算器，文章编辑等',
   codeES5: `function Cockpit(instruction) {
   this.instruction = instruction;
 }

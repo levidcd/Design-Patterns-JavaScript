@@ -11,6 +11,7 @@ import { patterns } from '../static/patterns';
 import { restart } from '../actions/restart';
 import { getMode } from '../selectors';
 import { withTranslation } from 'react-i18next';
+import i18n from '../i18n';
 
 
 SyntaxHighlighter.registerLanguage('javascript', js);
@@ -50,17 +51,32 @@ const StyledLink = styled(Link)`
   }
 `;
 
+const createProxy = (pattern) => new Proxy(pattern, {
+  get(target, key, receiver) {
+    let localeValue = target[key + '_' + i18n.language];
+    let value = target[key];
+    return localeValue ? localeValue : value;
+  }
+});
+
 class Pattern extends React.Component {
   componentDidMount() {
     this.props.reset();
   }
+
+  pattern
 
   render() {
     const {
       params: { id }
     } = this.props.match;
 
-    const pattern = patterns.filter(item => item.id === id)[0];
+    if (!this.pattern) {
+      const p = patterns.filter(item => item.id === id)[0];
+      this.pattern = createProxy(p);
+    }
+
+    const pattern = this.pattern;
 
     const style = this.props.mode === 'dark' ? styleDark : styleLight;
 
