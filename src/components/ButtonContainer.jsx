@@ -18,7 +18,6 @@ const StyledButtonContainer = styled.div`
 `;
 
 export const ButtonContainer = props => {
-
   const { t } = useTranslation();
 
   const { current, patterns, onSubmitAnswer } = props;
