@@ -34,6 +34,9 @@ const FooterContainer = styled.footer`
 
 const Footer = () => (
   <FooterContainer>
+    <a href="https://github.com/levidcd/Design-Patterns-JavaScript" target="_blank">
+      {ICON_GITHUB}
+    </a>
     <a
       href="https://twitter.com/intent/tweet?url=https://designpatternsgame.com&text=Test%20your%20familiarity%20with%20the%20Gang%20of%20Four%20design%20patterns%20implemented%20in%20JavaScript"
       target="_blank"
